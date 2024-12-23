@@ -14,27 +14,29 @@ struct ContentView: View {
                 }
                 .tag(Tab.Home) // Tagging the Home tab
                 
-            Text("Search View")
-                .tabItem {
-                    Label(Tab.Search.TabName, systemImage: Tab.Search.rawValue)
-                }
-                .tag(Tab.Search) // Tagging the Search tab
+            SearchView(viewModel: SearchViewModel())
+            .tabItem{
+                Label(Tab.Search.TabName,systemImage: Tab.Search.rawValue)
+            }
+            .tag(Tab.Search) // Tagging the Search tab
+         
 
-            Text("Notifications View")
+            NotificationView(viewModel:NotificationViewModel())
                 .tabItem {
                     Label(Tab.Notifications.TabName, systemImage: Tab.Notifications.rawValue)
                 }
                 .tag(Tab.Notifications) // Tagging the Notifications tab
-
-            Text("Cart View")
+          
+           
+            CartView(viewModel: CartViewModel())
                 .tabItem {
                     Label(Tab.Cart.TabName, systemImage: Tab.Cart.rawValue)
                 }
                 .tag(Tab.Cart) // Tagging the Cart tab
 
-            Text("Profile View")
-                .tabItem {
-                    Label(Tab.Profile.TabName, systemImage: Tab.Profile.rawValue)
+            ProfileView(viewModel: ProfileViewModel())
+                .tabItem{
+                    Label(Tab.Profile.TabName,systemImage: Tab.Profile.rawValue)
                 }
                 .tag(Tab.Profile) // Tagging the Profile tab
         }
